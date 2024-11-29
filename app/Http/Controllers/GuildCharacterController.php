@@ -39,35 +39,19 @@ class GuildCharacterController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(GuildCharacter $guildCharacter)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(GuildCharacter $guildCharacter)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, GuildCharacter $guildCharacter)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(GuildCharacter $guildCharacter)
     {
-        //
+        $guildCharacter->delete();
+
+        return response()->json([
+            'message' => 'Character removed of the guild',
+            'data' => $guildCharacter
+        ]);
+    
     }
 }

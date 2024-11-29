@@ -7,10 +7,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\{
     Character,
-    Guild
+    Guild,
+    GuildCharacter
 };
 
 Route::apiResource('character', CharacterController::class);
 Route::apiResource('guild', GuildController::class);
 
-Route::post('guild-character', [GuildCharacterController::class, 'store']);
+Route::apiResource('guild-character', GuildCharacterController::class)->only(['store', 'destroy']);
+
+
