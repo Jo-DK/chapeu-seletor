@@ -22,4 +22,15 @@ class GuildCharacter extends Model
     {
         return $date->format('d/m/Y H:i:s');
     }
+
+
+    public function guild()
+    {
+        return $this->belongsTo(Guild::class);
+    }
+
+    public function character()
+    {
+        return $this->belongsTo(Character::class);
+    }
 }

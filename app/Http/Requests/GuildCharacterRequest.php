@@ -22,7 +22,7 @@ class GuildCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'character_id' => 'required|exists:characters,id',
+            'character_id' => 'required|exists:characters,id|unique:guild_characters,character_id',
             'guild_id' => 'required|exists:guilds,id',
         ];
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GuildCharacterRequest;
 use App\Models\GuildCharacter;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,16 @@ class GuildCharacterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GuildCharacterRequest $request)
     {
-        //
+        $guildCharacter = GuildCharacter::create($request->validated());
+        $guildCharacter->character;
+        $guildCharacter->guild;
+
+        return response()->json([
+            'message' => 'Character Add to the Guild',
+            'data' => $guildCharacter
+        ]);
     }
 
     /**
