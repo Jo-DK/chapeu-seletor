@@ -25,6 +25,7 @@ class Guild extends Model
 
     public function characters()
     {
-        return $this->hasMany(Character::class);
+        // 'select * from character on guildcharacter on '
+        return $this->hasManyThrough(Character::class, GuildCharacter::class, 'guild_id', 'id',  'id', 'character_id');
     }
 }
