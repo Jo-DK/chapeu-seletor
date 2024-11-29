@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('guilds', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('initial_xp');
+            $table->integer('initial_xp')->default(0);
             $table->timestamps();
         });
     }

@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\CharacterController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\GuildController;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\{
-    Character
+    Character,
+    Guild
 };
 
 Route::apiResource('character', CharacterController::class);
+Route::apiResource('guild', GuildController::class);
