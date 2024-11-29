@@ -48,6 +48,8 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
+        $character->guild;
+        
         return response()->json([
             'message' => 'Show Character',
             'data' => $character

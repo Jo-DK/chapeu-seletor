@@ -23,4 +23,9 @@ class Character extends Model
     {
         return $date->format('d/m/Y H:i:s');
     }
+
+    public function Guild()
+    {
+        return $this->hasOneThrough(Guild::class, GuildCharacter::class, 'character_id', 'id', 'id', 'guild_id');
+    }
 }
