@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class GuildCharacter extends Model
@@ -10,4 +11,15 @@ class GuildCharacter extends Model
         'character_id',
         'guild_id'
     ];
+
+    /**
+     * Prepare a date for array / JSON serialization.
+     *
+     * @param  \DateTimeInterface  $date
+     * @return string
+     */
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('d/m/Y H:i:s');
+    }
 }
