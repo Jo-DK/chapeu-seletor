@@ -47,6 +47,8 @@ class GuildController extends Controller
      */
     public function show(Guild $guild)
     {
+        $guild->characters;
+        
         return response()->json([
             'message' => 'Show Guild',
             'data' => $guild

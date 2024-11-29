@@ -23,5 +23,8 @@ class Guild extends Model
         return $date->format('d/m/Y H:i:s');
     }
 
-
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
 }
