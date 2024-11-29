@@ -38,7 +38,7 @@ class CharacterController extends Controller
         $character = Character::create($request->validated());
 
         return response()->json([
-            'message' => 'List of Characters',
+            'message' => 'new Characters',
             'data' => $character
         ]);
     }
