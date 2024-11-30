@@ -11,13 +11,16 @@ class CharacterController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Character::all();
+        $data = Character::query();
+
+        if($request->withoutguild)
+            $data->WithOutGuild();
         
         return response()->json([
             'message' => 'List of Characters',
-            'data' => $data
+            'data' => $data->get()
         ]);
     }
 
