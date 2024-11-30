@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Guild extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'name',
         'initial_xp'
