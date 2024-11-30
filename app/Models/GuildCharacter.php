@@ -38,8 +38,8 @@ class GuildCharacter extends Model
     public static function Vinculate(Guild $guild, Character $character)
     {
         self::create([
-            'id_guild' => $guild->id,
-            'id_character' => $character->id
+            'guild_id' => $guild->id,
+            'character_id' => $character->id
         ]);
 
         $guild->initial_xp += $character->xp;

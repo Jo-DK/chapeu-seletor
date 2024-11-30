@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GuildCharacterRequest;
 use App\Models\GuildCharacter;
+use App\Services\DistributesService;
 use Illuminate\Http\Request;
 
 class GuildCharacterController extends Controller
@@ -53,5 +54,15 @@ class GuildCharacterController extends Controller
             'data' => $guildCharacter
         ]);
     
+    }
+
+
+    /**
+     * distributes all characters into balanced guilds
+     */
+    public function distributeCharacters(Request $request)
+    {
+        $distribute = new DistributesService($request->perGuild);
+        $distribute->main();
     }
 }

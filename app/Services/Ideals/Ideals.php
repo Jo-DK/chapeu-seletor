@@ -8,7 +8,6 @@ use App\Services\DistributesService;
 abstract class Ideals
 {
     public array $allowClasses;
-    public array $guilds;
     /**
      * Create a new class instance.
      */
@@ -28,12 +27,13 @@ abstract class Ideals
 
     protected function getCharacter()
     {
-        if($this->service->characters)
-            foreach( $this->service->characters as $c => $char)
+        $characters = $this->service->characters;
+
+        if($characters)
+            foreach( $characters as $c => $char)
             {
                 if(in_array($char->class, $this->allowClasses)){
-                    unset($this->service->characters[$c]);
-                    return $char;
+                    return $characters->pull($c);
                 }
             }
     }
