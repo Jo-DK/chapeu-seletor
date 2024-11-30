@@ -15,6 +15,9 @@ class Guild extends Model
         'initial_xp'
     ];
 
+    protected $with = ['characters'];
+
+
     /**
      * Prepare a date for array / JSON serialization.
      *
