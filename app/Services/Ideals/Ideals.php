@@ -29,7 +29,7 @@ abstract class Ideals
     {
         $characters = $this->service->characters;
 
-        if($characters)
+        if($characters->count())
             foreach( $characters as $c => $char)
             {
                 if(in_array($char->class, $this->allowClasses)){
