@@ -33,4 +33,16 @@ class GuildCharacter extends Model
     {
         return $this->belongsTo(Character::class);
     }
+
+
+    public static function Vinculate(Guild $guild, Character $character)
+    {
+        self::create([
+            'id_guild' => $guild->id,
+            'id_character' => $character->id
+        ]);
+
+        $guild->initial_xp += $character->xp;
+        $guild->save();
+    }
 }
