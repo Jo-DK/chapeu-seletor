@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DistributeRequest;
 use App\Http\Requests\GuildCharacterRequest;
 use App\Models\GuildCharacter;
 use App\Services\DistributesService;
@@ -60,7 +61,7 @@ class GuildCharacterController extends Controller
     /**
      * distributes all characters into balanced guilds
      */
-    public function distributeCharacters(Request $request)
+    public function distributeCharacters(DistributeRequest $request)
     {
         $distribute = new DistributesService($request->perGuild);
         $distribute->main();

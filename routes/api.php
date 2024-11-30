@@ -16,4 +16,4 @@ Route::apiResource('guild', GuildController::class);
 
 Route::apiResource('guild-character', GuildCharacterController::class)->only(['store', 'destroy']);
 
-
+Route::post('distribute-characters', [GuildCharacterController::class, 'distributeCharacters']);
