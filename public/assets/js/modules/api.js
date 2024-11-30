@@ -3,7 +3,7 @@ const HOST = 'http://localhost:8000/api';
 export const Api = {
 
     getCharacteres: () => {
-        return axios(HOST + '/character');
+        return axios(HOST + '/character?withoutguild=1');
     },
 
     postCharacter: (data) => {

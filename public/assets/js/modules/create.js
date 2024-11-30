@@ -28,5 +28,38 @@ export const Create = {
         newDiv.appendChild(xpDiv);
     
         target.appendChild(newDiv)
+    },
+
+    GuildList: (data) => {
+
+        const section = document.getElementById('guilds');
+
+        data.map((guild) => {
+            Create.GuildBox(guild, section)
+        })
+    },
+
+    GuildBox: (data, target) => {
+        const newDiv = document.createElement('div');
+        const nameDiv = document.createElement('div');
+        const xpSpan = document.createElement('span');
+
+        newDiv.classList.add('guild-box');
+        nameDiv.classList.add('guild-name');
+
+        nameDiv.textContent = data.name;
+        xpSpan.textContent = ' XP: ' + data.initial_xp;
+
+        nameDiv.appendChild(xpSpan);
+
+        newDiv.appendChild(nameDiv);
+
+        
+
+        data.characters.map((char) => {
+            Create.CharacterBox(char, newDiv)
+        })
+
+        target.appendChild(newDiv)
     }
 }

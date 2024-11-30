@@ -60,7 +60,8 @@ section::after {
 
 .character-box .character-name {
     /* background-color: blue; */
-    width: 100%;
+    width: 120px;
+    height: 15px;
     font-style: italic;
     overflow: hidden;
 }
@@ -76,4 +77,35 @@ section::after {
     width: 40%;
     font-weight: bold;
     color: white;
+}
+
+
+.guild-box{
+    width: 283px;
+    background-color: blue;
+    margin: 10px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    float: left;
+}
+
+.guild-box::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.guild-name{
+    width: auto;
+    font-weight: bold;
+    color: white;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.guild-name span{
+    margin-left: 15px;
+    color: yellow;
+    float: right
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
     <script type='module' src="{{ asset('assets/js/main.js') }}"></script>
 </head>
@@ -38,8 +39,10 @@
 
     </section>
 
+    <section id='guilds'>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </section>
+    
     
 
     <script>

@@ -6,7 +6,7 @@ Api.getCharacteres().then(response => {
 });
 
 Api.getGuilds().then(response => {
-    console.log(response.data)
+    Create.GuildList(response.data.data)
 });
 
 
@@ -14,7 +14,7 @@ const FormCharacter = document.getElementById('create-character');
 
 FormCharacter.addEventListener('submit', function(e) {
     e.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(e.target);
 
     Api.postCharacter(formData)
         .then(response => {
