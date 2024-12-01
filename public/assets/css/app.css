@@ -32,6 +32,17 @@ section::after {
     box-sizing: border-box;
 }
 
+select.form-input{
+    width: 110px;
+    font-size: 11px;
+    border-radius: 3px;
+    display: none;
+}
+
+.show select.form-input{
+    display: block !important;
+}
+
 .input-class {
     width: 105px;
 }
@@ -51,7 +62,6 @@ section::after {
     font-size: 12px;
 
     width: 120px;
-    /* height: 50px; */
 }
 
 .character-box div {

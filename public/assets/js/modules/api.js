@@ -16,5 +16,9 @@ export const Api = {
 
     getGuilds: () => {
         return axios(HOST + '/guild');
+    },
+
+    putGuildCharater: (vincule_id, guild_id) =>{
+        return axios.put(HOST + '/guild-character/' + vincule_id, {guild_id})
     }
 };
