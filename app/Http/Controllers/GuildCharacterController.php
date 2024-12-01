@@ -21,13 +21,17 @@ class GuildCharacterController extends Controller
 
     public function update(GuildCharacterRequest $request, GuildCharacter $guildCharacter)
     {
+
         $guildCharacter->guild_id = $request->guild_id;
         $guildCharacter->save();
 
+        $guildCharacter->guild;
+        $guildCharacter->character;
+
         return response() ->json([
-            'message' => 'Update Guil of Character',
+            'message' => 'Update Guild of Character',
             'data' => $guildCharacter
-        ]);
+        ], 201);
     }
 
     /**
