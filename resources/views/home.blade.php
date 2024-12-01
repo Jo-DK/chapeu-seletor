@@ -7,8 +7,8 @@
     <title>Home</title>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
-    <script type='module' src="{{ asset('assets/js/main.js') }}"></script>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script type='module' src="/assets/js/main.js"></script>
 </head>
 
 <body>
