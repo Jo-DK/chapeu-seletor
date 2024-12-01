@@ -79,4 +79,14 @@ class GuildCharacterController extends Controller
             'data' => 'Success'
         ]);
     }
+
+    public function reset()
+    {
+        `php artisan migrate:fresh`;
+
+        return response()->json([
+            'message' => 'Cleaning database',
+            'data' => 'Success'
+        ]);
+    }
 }
