@@ -1,4 +1,4 @@
-const HOST = 'http://localhost:8000/api';
+const HOST = '/api';
 
 export const Api = {
 
