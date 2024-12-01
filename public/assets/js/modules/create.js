@@ -56,13 +56,15 @@ export const Create = {
         nameDiv.classList.add('guild-name');
 
         nameDiv.textContent = guildList.name;
-        xpSpan.textContent = ' XP: ' + guildList.initial_xp;
 
         nameDiv.appendChild(xpSpan);
 
         newDiv.appendChild(nameDiv);
 
+        let totalXp = 0;
+
         guildList.guild_characters.map((char) => {
+            totalXp += char.character.xp;
             let divChar = Create.CharacterBox(char.character, newDiv)
             Create.SelectGuild(divChar, char.id, guildList.id)
 
@@ -74,6 +76,8 @@ export const Create = {
                 divChar.classList.remove('show');
             });
         })
+
+        xpSpan.textContent = ' XP: ' + totalXp;
 
         target.appendChild(newDiv)
     },
