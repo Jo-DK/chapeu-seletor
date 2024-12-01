@@ -86,8 +86,7 @@ export const Create = {
         select.addEventListener('change', function() {
             Api.putGuildCharater(vincule_id, this.value)
                 .then(response => {
-                    if(response.data.code == 201)
-                        location.reload();
+                    location.reload();
                 })
         })
         Create.Guilds.map((guild) => {
