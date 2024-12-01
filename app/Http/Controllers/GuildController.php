@@ -13,7 +13,7 @@ class GuildController extends Controller
      */
     public function index()
     {
-        $data = Guild::all();
+        $data = Guild::query()->with('guildCharacters')->get();
         
         return response()->json([
             'message' => 'List of Guilds',

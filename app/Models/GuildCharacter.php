@@ -12,6 +12,7 @@ class GuildCharacter extends Model
         'guild_id'
     ];
 
+
     /**
      * Prepare a date for array / JSON serialization.
      *

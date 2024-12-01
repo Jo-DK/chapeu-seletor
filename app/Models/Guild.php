@@ -15,8 +15,6 @@ class Guild extends Model
         'initial_xp'
     ];
 
-    protected $with = ['characters'];
-
 
     /**
      * Prepare a date for array / JSON serialization.
@@ -29,9 +27,9 @@ class Guild extends Model
         return $date->format('d/m/Y H:i:s');
     }
 
-    public function characters()
+    public function guildCharacters()
     {
-        // 'select * from character on guildcharacter on '
-        return $this->hasManyThrough(Character::class, GuildCharacter::class, 'guild_id', 'id',  'id', 'character_id');
+        return $this->hasMany(GuildCharacter::class)->with('character');
     }
+
 }
