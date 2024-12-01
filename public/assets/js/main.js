@@ -17,8 +17,9 @@ FormCharacter.addEventListener('submit', function(e) {
     const formData = new FormData(e.target);
 
     Api.postCharacter(formData)
-        .then(response => {
-            console.log(response.data);
+        .then( response => {
+            const section = document.getElementById('characters');
+            Create.CharacterBox(response.data.data, section);
         })
 })
 
@@ -27,5 +28,10 @@ const distributeForm = document.getElementById('distribute');
 
 distributeForm.addEventListener('submit', function(e){
     e.preventDefault();
-    console.log('Submetendo !!')
+    const formData = new FormData(e.target);
+    Api.distribute(formData)
+        .then( response => {
+            if(response.data.data)
+                location.reload()
+        })
 })
