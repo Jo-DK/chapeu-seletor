@@ -6,7 +6,7 @@ export const Create = {
 
     CharacterList: (data) => {
 
-        const section = document.getElementById('section-character');
+        const section = document.getElementById('characters');
         data.map((char) => {
             Create.CharacterBox(char, section);
 

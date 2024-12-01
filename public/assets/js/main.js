@@ -18,7 +18,8 @@ FormCharacter.addEventListener('submit', function(e) {
 
     Api.postCharacter(formData)
         .then(response => {
-            console.log(response.data);
+            const section = document.getElementById('characters');
+            Create.CharacterBox(response.data.data, section);
         })
 })
 

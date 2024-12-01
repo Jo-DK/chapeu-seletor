@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <section id='section-character'>
+    <section>
+
         <div class='mini-form'>
             <form id='create-character'>
                 <input class='form-input' required type="text" name='name' placeholder='Nome do Personagem'>
@@ -23,22 +24,22 @@
                     <option value="Arqueiro">Arqueiro</option>
                 </select>
                 <input required type="number" name='xp' class='form-input input-xp' placeholder='Xp'>
-                <button class='btn form-input'> Criar Novo </button>
+                <button class='btn form-input'> Criar Novo Personagem</button>
 
             </form>
         </div>
-    </section>
-    <section>
+
         <div class="mini-form">
             <form id="distribute">
                 <input type="numeric" name='per_guild'  required class='form-input' placeholder='Número de Personagens'>
-                <button class='form-input'> Gerar Guildas </button>
+                <button class='form-input'> Distribuir em Guildas </button>
             </form>
     
         </div>
 
     </section>
 
+    <section id='characters' ></section>
     <section id='guilds'>
 
     </section>

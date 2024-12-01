@@ -39,6 +39,10 @@ select.form-input{
     display: none;
 }
 
+.mini-form select.form-input{
+    display: block;
+}
+
 .show select.form-input{
     display: block !important;
 }
