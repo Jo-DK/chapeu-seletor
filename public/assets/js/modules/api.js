@@ -20,5 +20,15 @@ export const Api = {
 
     putGuildCharater: (vincule_id, guild_id) =>{
         return axios.put(HOST + '/guild-character/' + vincule_id, {guild_id})
+    },
+
+    distribute: (data) =>{
+        return axios.post(HOST + '/distribute-characters', data, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
     }
+
+
 };

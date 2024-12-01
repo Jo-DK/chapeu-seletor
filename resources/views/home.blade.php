@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Chapéu Seletor</title>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/assets/css/app.css">
@@ -31,7 +31,12 @@
 
         <div class="mini-form">
             <form id="distribute">
-                <input type="numeric" name='per_guild'  required class='form-input' placeholder='Número de Personagens'>
+                <input 
+                    type="numeric" 
+                    name='per_guild'  
+                    required 
+                    class='form-input' 
+                    placeholder='Quantidade por Guilda'>
                 <button class='form-input'> Distribuir em Guildas </button>
             </form>
     

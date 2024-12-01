@@ -71,7 +71,12 @@ class GuildCharacterController extends Controller
      */
     public function distributeCharacters(DistributeRequest $request)
     {
-        $distribute = new DistributesService($request->perGuild);
+        $distribute = new DistributesService($request->per_guild);
         $distribute->main();
+
+        return response()->json([
+            'message' => 'Character removed of the guild',
+            'data' => 'Success'
+        ]);
     }
 }

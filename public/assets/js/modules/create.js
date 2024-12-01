@@ -91,7 +91,7 @@ export const Create = {
         xpSpan.textContent = ' XP: ' + totalXp;
 
         if (!hasSupport)
-            newDiv.appendChild( Create.MissingTanker() )
+            newDiv.appendChild( Create.MissingSupport() )
 
         if (!hasTanker)
             newDiv.appendChild( Create.MissingTanker() )
@@ -112,7 +112,7 @@ export const Create = {
     },
 
     MissingAdc: () => {
-        return Create.Alert('Arqueiro ou Mago para danos a distancia!');
+        return Create.Alert('Arqueiro ou Mago para danos a distância!');
     },
 
     Alert: (msg) => {
