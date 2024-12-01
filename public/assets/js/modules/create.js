@@ -63,6 +63,8 @@ export const Create = {
 
         let totalXp = 0;
 
+        let hasSupport, hasTanker, hasAdc = false;
+
         guildList.guild_characters.map((char) => {
             totalXp += char.character.xp;
             let divChar = Create.CharacterBox(char.character, newDiv)
@@ -71,15 +73,53 @@ export const Create = {
             divChar.addEventListener('mouseover', () => {
                 divChar.classList.add('show');
             });
-            
+
             divChar.addEventListener('mouseout', () => {
                 divChar.classList.remove('show');
             });
+
+            if (char.character.class == 'Clérigo')
+                hasSupport = true;
+
+            if (char.character.class == 'Guerreiro')
+                hasTanker = true;
+
+            if (char.character.class == 'Mago' || char.character.class == 'Arqueiro')
+                hasAdc = true;
         })
 
         xpSpan.textContent = ' XP: ' + totalXp;
 
+        if (!hasSupport)
+            newDiv.appendChild( Create.MissingTanker() )
+
+        if (!hasTanker)
+            newDiv.appendChild( Create.MissingTanker() )
+
+        if (!hasAdc)
+            newDiv.appendChild( Create.MissingAdc() )
+
+
         target.appendChild(newDiv)
+    },
+
+    MissingSupport: () => {
+        return Create.Alert('Clérigo para ser o Suporte!');
+    },
+
+    MissingTanker: () => {
+        return Create.Alert('Guerreiro para ser o Tanker!');
+    },
+
+    MissingAdc: () => {
+        return Create.Alert('Arqueiro ou Mago para danos a distancia!');
+    },
+
+    Alert: (msg) => {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('alert');
+        newDiv.textContent = 'Esta faltando um ' + msg;
+        return newDiv;
     },
 
     SelectGuild: (div, vincule_id, idGuild) => {
@@ -87,7 +127,7 @@ export const Create = {
         let select = document.createElement('select');
         select.setAttribute('data-id', vincule_id)
         select.classList.add('form-input')
-        select.addEventListener('change', function() {
+        select.addEventListener('change', function () {
             Api.putGuildCharater(vincule_id, this.value)
                 .then(response => {
                     location.reload();

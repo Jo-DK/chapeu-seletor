@@ -123,3 +123,15 @@ select.form-input{
     color: yellow;
     float: right
 }
+
+.alert{
+    background-color: #f33;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 13px;
+    width: auto;
+    float: left;
+    font-weight: bold;
+}
