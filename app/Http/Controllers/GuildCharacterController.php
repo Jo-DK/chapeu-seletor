@@ -18,12 +18,16 @@ class GuildCharacterController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function update(GuildCharacterRequest $request, GuildCharacter $guildCharacter)
     {
-        //
+        $guildCharacter->guild_id = $request->guild_id;
+        $guildCharacter->save();
+
+        return response() ->json([
+            'message' => 'Update Guil of Character',
+            'data' => $guildCharacter
+        ]);
     }
 
     /**

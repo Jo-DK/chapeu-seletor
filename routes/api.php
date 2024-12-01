@@ -14,6 +14,6 @@ use App\Models\{
 Route::apiResource('character', CharacterController::class);
 Route::apiResource('guild', GuildController::class);
 
-Route::apiResource('guild-character', GuildCharacterController::class)->only(['store', 'destroy']);
+Route::apiResource('guild-character', GuildCharacterController::class)->except(['show', 'index']);
 
 Route::post('distribute-characters', [GuildCharacterController::class, 'distributeCharacters']);

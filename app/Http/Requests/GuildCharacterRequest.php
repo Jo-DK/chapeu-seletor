@@ -21,9 +21,12 @@ class GuildCharacterRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'character_id' => 'required|exists:characters,id|unique:guild_characters,character_id',
-            'guild_id' => 'required|exists:guilds,id',
+        $rules = [
+            'guild_id' => 'required|exists:guilds,id'
         ];
+        if(request()->isMethod('post'))
+            $rules['character_id'] = 'required|exists:characters,id|unique:guild_characters,character_id';
+
+        return $rules;
     }
 }
