@@ -4,20 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DistributeRequest;
 use App\Http\Requests\GuildCharacterRequest;
+use App\Models\Character;
+use App\Models\Guild;
 use App\Models\GuildCharacter;
 use App\Services\DistributesService;
 use Illuminate\Http\Request;
 
 class GuildCharacterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
 
     public function update(GuildCharacterRequest $request, GuildCharacter $guildCharacter)
     {
@@ -48,7 +42,6 @@ class GuildCharacterController extends Controller
             'data' => $guildCharacter
         ]);
     }
-
 
 
     /**
@@ -82,7 +75,8 @@ class GuildCharacterController extends Controller
 
     public function reset()
     {
-        `php artisan migrate:fresh`;
+        Guild::query()->delete();
+        Character::query()->delete();
 
         return response()->json([
             'message' => 'Cleaning database',

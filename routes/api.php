@@ -17,3 +17,6 @@ Route::apiResource('guild', GuildController::class);
 Route::apiResource('guild-character', GuildCharacterController::class)->except(['show', 'index']);
 
 Route::post('distribute-characters', [GuildCharacterController::class, 'distributeCharacters']);
+
+Route::delete('reset', [GuildCharacterController::class, 'reset']);
+

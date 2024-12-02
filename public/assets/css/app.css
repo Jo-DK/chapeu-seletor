@@ -135,3 +135,15 @@ select.form-input{
     float: left;
     font-weight: bold;
 }
+
+.mini-form.reset-box{
+    float:right;
+    
+}
+
+#reset {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+}
