@@ -73,7 +73,7 @@ class DistributesService
     /** É importante que as guildas estejam ordenadas pelo xp, 
      * interendo sempre o menor primeiro, para garantir o equilibrio das Guildas
     */
-    private function guildsReorder()
+    public function guildsReorder()
     {
         $this->guilds = $this->guilds->sortBy('initial_xp');
     }
