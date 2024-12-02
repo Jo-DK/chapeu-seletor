@@ -14,7 +14,7 @@ class GuildFactory extends Factory
         'Ring Society', 'Power Rangers', 'Knights of the Round Table', 'Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin',
         'Hellfire Club', 'Granddaughters of the Old Barreiro', 'Winterfell Wolves', 'Targarian Dragons', 'Casterly Lions', 'Chicago Bulls',
         'Hells Angels MC', 'Gang Of Four', 'Bob\'s Nephews', 'Rebel Alliance', 'The Dark Side', 'WeatherLight Crew', 'The Highlanders', 'The Avengers',
-        'Llanowar Elves', 'Blind Guardians', 'The Children of Asgard'
+        'Llanowar Elves', 'Blind Guardians', 'The Children of Asgard', 'Theatres des Vampires', 'Clã Namikaze'
     ];
     /**
      * Define the model's default state.

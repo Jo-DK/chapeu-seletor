@@ -54,7 +54,7 @@ class DistributesService
     public function createGuilds()
     {
         $guildsQuant = $this->guildsQuantity();
-        return Guild::factory($guildsQuant)->create();
+        return Guild::Fabricate($guildsQuant);
     }
 
     public function guildsQuantity(): int
