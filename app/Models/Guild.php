@@ -40,6 +40,10 @@ class Guild extends Model
         return $this->hasMany(GuildCharacter::class)->with('character');
     }
 
+    /** 
+     * Ocorre um bug no Heroku quando uso as Factors nativas do Laravel,
+     * por isso implementei a minha própria
+     */
     public static function Fabricate(int $quantity)
     {
         $names = self::$names;

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GuildRequest;
 use App\Models\Guild;
-use Illuminate\Http\Request;
 
 class GuildController extends Controller
 {
@@ -19,14 +18,6 @@ class GuildController extends Controller
             'message' => 'List of Guilds',
             'data' => $data
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -53,14 +44,6 @@ class GuildController extends Controller
             'message' => 'Show Guild',
             'data' => $guild
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Guild $guild)
-    {
-        //
     }
 
     /**
