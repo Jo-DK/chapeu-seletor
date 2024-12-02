@@ -53,6 +53,7 @@ class DistributesService
 
     public function createGuilds()
     {
+        require_once './vendor/fakerphp/faker/src/Faker/Factory.php';
         $guildsQuant = $this->guildsQuantity();
         return Guild::factory($guildsQuant)->create();
     }
