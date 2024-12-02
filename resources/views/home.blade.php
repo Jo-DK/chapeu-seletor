@@ -42,6 +42,10 @@
     
         </div>
 
+        <div class="mini-form reset-box">
+            <button id='reset' class='form-input'>Resetar Base de Dados</button>
+        </div>
+
     </section>
 
     <section id='characters' ></section>

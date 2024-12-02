@@ -28,7 +28,9 @@ export const Api = {
                 'Content-Type': 'multipart/form-data'
             }
         })
+    },
+
+    reset: () => {
+        return axios.delete(HOST + '/reset', )
     }
-
-
 };

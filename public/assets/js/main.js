@@ -35,3 +35,14 @@ distributeForm.addEventListener('submit', function(e){
                 location.reload()
         })
 })
+
+const btnReset = document.getElementById('reset');
+
+btnReset.addEventListener('click', function(){
+    Api.reset().then( (response) => {
+        console.log(response.data);
+        location.reload()
+    })
+
+})
+
