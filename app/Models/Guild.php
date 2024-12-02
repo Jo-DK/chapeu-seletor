@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Guild extends Model
 {
+    /** @use HasFactory<\Database\Factories\GuildFactory> */
     use HasFactory;
     
     protected $fillable = [
