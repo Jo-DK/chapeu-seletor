@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Database\Factories\GuildFactory;
 use Illuminate\Database\Eloquent\Model;
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Guild extends Model
@@ -31,6 +33,19 @@ class Guild extends Model
     public function guildCharacters()
     {
         return $this->hasMany(GuildCharacter::class)->with('character');
+    }
+
+    public static function Fabricate(int $quantity)
+    {
+        $names = (new GuildFactory)->names;
+ 
+        $guilds = new Collection();
+        for($i = 1; $i <= $quantity; $i++){
+            shuffle($names);
+            $guilds->push(self::create(['name'=> array_pop($names)]));
+        }
+
+        return $guilds;
     }
 
 }
