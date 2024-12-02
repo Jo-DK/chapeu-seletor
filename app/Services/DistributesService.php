@@ -9,7 +9,7 @@ use App\Services\Ideals\AttackDamageCarry;
 use App\Services\Ideals\Support;
 use App\Services\Ideals\Tanker;
 use Illuminate\Database\Eloquent\Collection;
-
+use Faker;
 class DistributesService
 {
 
