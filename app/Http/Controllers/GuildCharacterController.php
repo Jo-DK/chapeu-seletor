@@ -15,7 +15,6 @@ class GuildCharacterController extends Controller
 
     public function update(GuildCharacterRequest $request, GuildCharacter $guildCharacter)
     {
-
         $guildCharacter->guild_id = $request->guild_id;
         $guildCharacter->save();
 
@@ -43,7 +42,6 @@ class GuildCharacterController extends Controller
         ]);
     }
 
-
     /**
      * Remove the specified resource from storage.
      */
@@ -55,9 +53,7 @@ class GuildCharacterController extends Controller
             'message' => 'Character removed of the guild',
             'data' => $guildCharacter
         ]);
-    
     }
-
 
     /**
      * distributes all characters into balanced guilds

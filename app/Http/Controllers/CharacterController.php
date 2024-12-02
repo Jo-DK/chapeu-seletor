@@ -25,25 +25,16 @@ class CharacterController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(CharacterRequest $request)
     {
-
         $character = Character::create($request->validated());
 
         return response()->json([
             'message' => 'new Characters',
             'data' => $character
-        ]);
+        ], 201);
     }
 
     /**
@@ -57,14 +48,6 @@ class CharacterController extends Controller
             'message' => 'Show Character',
             'data' => $character
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Character $character)
-    {
-        //
     }
 
     /**
