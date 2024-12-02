@@ -9,7 +9,6 @@ use App\Services\Ideals\AttackDamageCarry;
 use App\Services\Ideals\Support;
 use App\Services\Ideals\Tanker;
 use Illuminate\Database\Eloquent\Collection;
-use Faker;
 class DistributesService
 {
 
@@ -53,7 +52,7 @@ class DistributesService
 
     public function createGuilds()
     {
-        require_once './vendor/fakerphp/faker/src/Faker/Factory.php';
+
         $guildsQuant = $this->guildsQuantity();
         return Guild::factory($guildsQuant)->create();
     }
